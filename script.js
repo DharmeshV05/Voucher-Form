@@ -17,11 +17,44 @@ function selectFilter() {
   };
 }
 
+function showToast(message) {
+  // Create toast element
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.textContent = message;
+  
+  // Append toast to body
+  document.body.appendChild(toast);
+  
+  // Remove toast after 3 seconds
+  setTimeout(() => {
+      toast.remove();
+  }, 3000);
+}
+
 function convertToTable(filename = "") {
-    // Get form data
-    const form = document.getElementById("voucher-form");
-    let sel = document.getElementById("filter");
-    const formData = new FormData(form);
+  // Get form data
+  const form = document.getElementById("voucher-form");
+  const formData = new FormData(form);
+  
+  // Validate form fields
+  let isValid = true;
+  formData.forEach((value, key) => {
+      const input = document.getElementsByName(key)[0];
+      if (value.trim() === "") {
+          showToast(`Please fill in the ${key} field.`);
+          isValid = false;
+      }
+  });
+
+  if (!isValid) {
+      return; // Stop further execution if form is invalid
+  }
+
+  let sel = document.getElementById("filter");
+
+   
+    
     // Create table element
     const table = document.getElementById("formDataTable");
     table.classList.add("data-table"); // Optional class for styling
@@ -183,4 +216,25 @@ function convertToTable(filename = "") {
   
     return words.reverse().join(" ").trim();
   }
+// addEventListener
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("voucher-form");
+    const inputs = form.querySelectorAll("input");
+    inputs.forEach((input, index) => {
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                const nextIndex = index + 1;
+                if (nextIndex < inputs.length) {
+                    inputs[nextIndex].focus();
+                } else {
+                    inputs[0].focus(); // Focus on the first input field if the last one is reached
+                }
+            }
+        });
+    });
+});
+
+  
   
