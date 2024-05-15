@@ -33,27 +33,27 @@ function showToast(message) {
 }
 
 function convertToTable(filename = "") {
-  // Get form data
-  const form = document.getElementById("voucher-form");
-  const formData = new FormData(form);
-  
-  // Validate form fields
-  let isValid = true;
-  formData.forEach((value, key) => {
-      const input = document.getElementsByName(key)[0];
-      if (value.trim() === "") {
-          showToast(`Please fill in the ${key} field.`);
-          isValid = false;
-      }
-  });
+    // Get form data
+    const form = document.getElementById("voucher-form");
+    const formData = new FormData(form);
+    
+    // Validate form fields
+    let isValid = true;
+    formData.forEach((value, key) => {
+        if (key !== "voucherNo" && value.trim() === "") { // Exclude voucherNo from validation
+            showToast(`Please fill in the ${key} field.`);
+            isValid = false;
+        }
+    });
 
-  if (!isValid) {
-      return; // Stop further execution if form is invalid
-  }
+    if (!isValid) {
+        return; // Stop further execution if form is invalid
+    }
 
-  let sel = document.getElementById("filter");
+    let sel = document.getElementById("filter");
 
-   
+    // Continue with the rest of the function if form is valid...
+
     
     // Create table element
     const table = document.getElementById("formDataTable");
