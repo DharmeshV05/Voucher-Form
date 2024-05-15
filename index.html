@@ -39,22 +39,24 @@
           </div>
           <div class="form-group">
             <label for="voucherNo">Voucher No.</label>
-            <input type="text" id="voucherNo" name="voucherNo" readonly />
-            <!-- Add a readonly attribute for voucher number -->
+            <input type="text" id="voucherNo" name="voucherNo" />
+            
           </div>
         </div>
         <div class="form-group">
           <label for="payTo">Pay to</label>
           <input type="text" id="payTo" name="payTo" />
         </div>
-        <div class="form-group">
-          <label for="payBy">Pay by</label>
-          <input type="text" id="payBy" name="payBy" />
-        </div>
+       
         <div class="form-group">
           <label for="accountHead">Account Head</label>
           <input type="text" id="accountHead" name="accountHead" />
         </div>
+        <div class="form-group">
+          <label for="payBy">Paid To</label>
+          <input type="text" id="PaidTo" name="PaidTo" />
+        </div>
+
         <div class="form-group">
           <label for="towards">Towards</label>
           <input type="text" id="towards" name="towards" />
@@ -67,13 +69,13 @@
             name="amount"
             oninput="convertAmountToWords()"
           />
-          <!-- Add an oninput event listener to trigger conversion -->
+          
         </div>
         <div class="amount-box">
           <div>
             <label for="amountRs">AMOUNT Rs.</label>
-            <input type="text" id="amountRs" name="amountRs" readonly />
-            <!-- Add a readonly attribute for the sum in words -->
+            <input type="text" id="amountRs" name="amountRs"/>
+       
           </div>
         </div>
         <div class="signature-section">
@@ -92,8 +94,6 @@
     </div>
 
     <script src="script.js"></script>
-    <!-- <button type="button" onclick="convertToTable()">Export To Excel</button>
-    <table id="formDataTable" style="display: none"></table>
-    <button id="print" onclick="window.print()">Print</button> -->
+    
   </body>
 </html>

@@ -71,18 +71,18 @@ function convertToTable(filename = "") {
       });
       navigator.msSaveOrOpenBlob(blob, filename);
     } else {
-      // Create a link to the file
+     
       downloadLink.href = "data:" + dataType + ", " + tableHTML;
-      // Setting the file name
+   
       downloadLink.download = filename;
-      //triggering the function
+      
       downloadLink.click();
     }
     table.innerHTML = "";
   }
   
   function generateRandomVoucherNo() {
-    return Math.floor(Math.random() * 1000); // Generate a 4-digit random number
+    return Math.floor(Math.random() * 10000); // Generate a 4-digit random number
   }
   
   function convertAmountToWords() {
