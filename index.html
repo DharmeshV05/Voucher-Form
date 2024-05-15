@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voucher-Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="voucher-form">
+      <div id="filter-section" class="filter-section">
+        <label for="filter"></label>
+        <select id="filter" onchange="selectFilter()">
+          <option
+            value="Contentstack"
+            data-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr6uyOXjfnMDJ1smXk49bR4KazE2gp9MNixw&s">
+            Contentstack
+          </option>
+          <option
+            value="Raw Engineering Pvt Ltd"
+            data-logo="data:image/jpeg;base64,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"
+          >
+            Raw Engineering Pvt Ltd
+          </option>
+          <option
+            value="Surfboard"
+            data-logo="//images.contentstack.io/v3/assets/blt137524604e62b5cb/blte814c52ab7983cb7/5ed94783ff1cb239b9500ed0/logo@3x.svg"
+          >
+            Surfboard
+          </option>
+        </select>
+      </div>
+      <div id="selected-logo"></div>
+      <form id="voucher-form">
+        <div class="right-align">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="form-group">
+            <label for="voucherNo">Voucher No.</label>
+            <input type="text" id="voucherNo" name="voucherNo" readonly />
+            <!-- Add a readonly attribute for voucher number -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="payTo">Pay to</label>
+          <input type="text" id="payTo" name="payTo" />
+        </div>
+        <div class="form-group">
+          <label for="payBy">Pay by</label>
+          <input type="text" id="payBy" name="payBy" />
+        </div>
+        <div class="form-group">
+          <label for="accountHead">Account Head</label>
+          <input type="text" id="accountHead" name="accountHead" />
+        </div>
+        <div class="form-group">
+          <label for="towards">Towards</label>
+          <input type="text" id="towards" name="towards" />
+        </div>
+        <div class="form-group">
+          <label for="amount">The Sum</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            oninput="convertAmountToWords()"
+          />
+          <!-- Add an oninput event listener to trigger conversion -->
+        </div>
+        <div class="amount-box">
+          <div>
+            <label for="amountRs">AMOUNT Rs.</label>
+            <input type="text" id="amountRs" name="amountRs" readonly />
+            <!-- Add a readonly attribute for the sum in words -->
+          </div>
+        </div>
+        <div class="signature-section">
+          <div class="signature-box">
+            Prepared By
+            <div class="signature-box"></div>
+          </div>
+          <div class="signature-box">Signature</div>
+        </div>
+      </form>
+    </div>
+    <div class="button-container">
+      <button type="button" onclick="convertToTable()">Export To Excel</button>
+      <table id="formDataTable" style="display: none"></table>
+      <button id="print" onclick="window.print()">Print</button>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- <button type="button" onclick="convertToTable()">Export To Excel</button>
+    <table id="formDataTable" style="display: none"></table>
+    <button id="print" onclick="window.print()">Print</button> -->
+  </body>
+</html>
