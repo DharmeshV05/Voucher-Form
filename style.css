@@ -1,19 +1,23 @@
 body {
   font-family: Arial, sans-serif;
 }
+
 .voucher-form {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #000;
 }
+
 .form-group {
   margin-bottom: 10px;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
+
 input[type="text"],
 input[type="date"],
 .amount-box input {
@@ -24,19 +28,20 @@ input[type="date"],
   border-bottom: 1px solid #000;
   box-sizing: border-box;
 }
+
 .amount-box {
-  display: flex;
-  margin-bottom: 65px;
+  margin-bottom: 50px; /* Increased bottom margin for more gap */
 }
+
 .amount-box input {
-  flex: 1;
+  width: 100%;
 }
 
 .amount-input {
   border: none;
-  border-bottom: 1px solid #000; 
-  padding: 5px 0; 
-  width: 100%; 
+  border-bottom: 1px solid #000;
+  padding: 8px;
+  width: 100%;
   background-color: transparent;
   outline: none;
 }
@@ -44,6 +49,7 @@ input[type="date"],
 .right-align {
   text-align: right;
 }
+
 .right-align input[type="text"],
 .right-align input[type="date"] {
   width: 50%;
@@ -53,32 +59,37 @@ input[type="date"],
   border-bottom: 1px solid #000;
   box-sizing: border-box;
 }
+
 .signature-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: -3px;
 }
+
 .signature-box {
   padding-top: 5px;
   text-align: center;
   flex: 1;
 }
+
 .filter-section {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
+
 .logo-option {
   margin-right: 20px;
   cursor: pointer;
 }
+
 .logo-option:last-child {
   margin-right: 0;
 }
+
 #selected-logo img {
   width: 20%;
-
 }
 
 .toast {
@@ -92,7 +103,6 @@ input[type="date"],
   border-radius: 5px;
   z-index: 9999;
 }
-
 
 /* New styles for button container */
 .button-container {
@@ -110,46 +120,44 @@ input[type="date"],
   padding: 10px 20px; /* Adjust button padding */
   margin: 0 10px; /* Adjust button margin */
 }
-  /* img{
-    width: 20%;
-    height: 205;
-  }
-   */
-  @media print {
-    /* Hide unnecessary elements when printing */
-    body * {
-      visibility: hidden;
-    }
-    .voucher-form, .voucher-form * {
-      visibility: visible;
-    }
-    .voucher-form {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      border: none;
-    }
-    .button-container {
-      display: none; /* Hide buttons when printing */
-    }
-    /* Adjust date and voucher number labels for printing */
-    label[for="date"],
-    label[for="voucherNo"] {
-      width: 50%; /* Adjust label width for printing */
-      display: inline-block;
-      text-align: right;
-      margin-right: 10px;
-      font-weight: bold;
-      padding: 1px 15px;
-    }
-  
-    /* Adjust date and voucher number inputs for printing */
-    input[type="text"][id="date"],
-    input[type="text"][id="voucherNo"] {
-      width: 60%; /* Adjust input width for printing */
-      box-sizing: border-box;
 
-    }
+@media print {
+  /* Hide unnecessary elements when printing */
+  body * {
+    visibility: hidden;
   }
-  
+  .voucher-form, .voucher-form * {
+    visibility: visible;
+  }
+  .voucher-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+  }
+  .button-container {
+    display: none; /* Hide buttons when printing */
+  }
+  /* Adjust date and voucher number labels for printing */
+  label[for="date"],
+  label[for="voucherNo"] {
+    width: 10%; /* Adjust label width for printing */
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+    padding: 1px 15px;
+  }
+
+  /* Adjust date and voucher number inputs for printing */
+  input[type="date"] {
+    width: 20%; /* Adjust date input width for printing */
+    box-sizing: border-box;
+  }
+
+  input[type="text"][id="voucherNo"] {
+    width: 10%; /* Adjust input width for printing */
+    box-sizing: border-box;
+  }
+}
